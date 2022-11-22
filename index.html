@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--
+        PROBLEMEBER:
+           1. Knapperne i sidebar skal hænge sig fast og ikke være placeret med margin - ifht scaling
+            2. Kasserne og content, alt det grønne - skal være dynamiske og kunne resize
+
+
+
+
+
+
+    -->
+</head>
+
+<body>
+
+
+    <div id="sidebar">
+        <div id="homeLogo"></div>
+        <div id="likedLogo"></div>
+    </div>
+    
+    <div id="flexContainer">
+        <div id="header">
+            <div class="searchContainer">
+                <form>
+                    <input id="searchbar" type="text" placeholder="søg på noget" name="searchbar">
+                </form>
+            </div>
+            <div id="utilGroup">
+            <p>Navn på bruger</p>
+            <img id="profilePicture" src="toast.jpg" alt="her er et billede">
+            <button style="font-size:24px"><i class="fa fa-sign-out"></i></button>
+            </div>
+        </div>
+        <div id="content">
+            <div class="venstre">
+
+                <div id="newsContainer">
+                    <h1 id="news">Nyheder</h1>
+                    <div id="bigNews"></div>
+                    <div id="smallNewsContainer">
+                        <div class="smallNews">1</div>
+                        <div class="smallNews">2</div>
+                        <div class="smallNews">3</div>
+                        <div class="smallNews">4</div>
+                        <div class="smallNews">5</div>
+                        <div class="smallNews">6</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="højre">
+                <div id="infoContainer">
+                    <h1 id="weatherText">Vejret</h1>
+                    <div id="time"></div>
+                    <h1 id="timeText">Time</h1>
+                    <div id="weather"></div>
+                    <h1 id="forecastText">Forecast</h1>
+                    <div id="forecast"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
