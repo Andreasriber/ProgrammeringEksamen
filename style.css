@@ -1,5 +1,7 @@
+
+
 body{
-    min-height: 100vh;
+    height: 100%;
     margin: 0;  
     display: flex;   
 }
@@ -14,12 +16,15 @@ body{
 
 /* SIDEBAR */
 #sidebar{
-    height: 100vh;
+    min-height: 100%;
     width: 70px;
     background-color: rgb(66, 66, 109);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    
+    
+    
 }
 #homeLogo{
     width: 60px;
@@ -45,17 +50,20 @@ body{
 
 /* HEADER */
 #header{
-    height: 8vh;
+    min-height: 8vh;
     width: 100%;
     margin: 0;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    
 }
 #profilePicture{
     border-radius: 50%;
-    height: 6vh;
+    height: 50px;
+    width: 50px;
     margin-right: 20px;
     
 }
@@ -73,6 +81,8 @@ body{
     font-family: monospace;
     font-weight: bold;
     color: rgb(82, 81, 127);
+    margin-right: 20px;
+    margin-top: 15px;
 
 }
 #searchField{
@@ -83,16 +93,24 @@ body{
 
 /* CONTENT */
 #content{
-    background-color:green;
+    background-color:rgb(221, 220, 220);
     width: 100%;
-    height: 92vh;
+    height: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    
+    
+    
+    
 }
 
 .højre{
     background-color: rgb(221, 220, 220);
-    height: 92vh;
-    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    display: flex;
     
 
 }
@@ -100,8 +118,10 @@ body{
 
 .venstre{
     background-color: rgb(221, 220, 220);
-    height: 92vh;
-    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
     
   
 
@@ -120,7 +140,6 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     width: 650px;
-    
     margin-top: 7px;
     margin-left: 20px;   
 }
@@ -129,7 +148,6 @@ body{
     background-color: white;
     height: 180px;
     width: 650px;
-    
     border-radius: 10px;
     margin-left: 20px;
 }
@@ -157,7 +175,8 @@ body{
     width: 640px;
     background-color: white;
     border-radius: 10px;
-    margin-right: 40px;
+    margin-left: 20px;
+    
 
 }
 
@@ -166,7 +185,8 @@ body{
     width: 640px;
     background-color: white;
     border-radius: 10px;
-    margin-right: 40px;
+    margin-left: 20px;
+    
     
     
 
@@ -177,8 +197,8 @@ body{
     width: 640px;
     background-color: white;
     border-radius: 10px;
-    margin-right: 40px;
     margin-top: 28px;
+    margin-left: 20px;
 
 }
 
@@ -186,7 +206,7 @@ body{
 
 #news{
     align-self: flex-start;
-    margin-left: 60px;
+    margin-left: 20px;
     margin-bottom: 5px;
     font-family: monospace;
     font-size: 20px;
@@ -197,23 +217,26 @@ body{
 
 #weatherText{
     align-self: flex-start;
-    margin-left: 30px;
+    
     margin-bottom: 5px;
     font-family: monospace;
     font-size: 20px;
     margin-top: 25px;
     color: rgb(82, 81, 127);
     margin-top: 28px;
+    margin-left: 20px;
+    
 }
 
 
 #timeText{
     align-self: flex-start;
-    margin-left: 30px;
+    
     margin-bottom: 5px;
     font-family: monospace;
     font-size: 20px;
     color: rgb(82, 81, 127);
+    margin-left: 20px;
 }
 
 
