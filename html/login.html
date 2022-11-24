@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../css/loginStyle.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../css/loginStyle.css" />
+  </head>
+  <body>
     <div id="sidebar">
-        <button id="homeLogo" onclick="homePage()"><img src ="../images/home_page.png"></button>
-        <button id="likedLogo"><img src ="../images/heart.png"></button>
+      <button id="homeLogo" onclick="homePage()">
+        <img src="../images/home_page.png" />
+      </button>
+      <button id="likedLogo"><img src="../images/heart.png" /></button>
     </div>
-    
+
     <div id="flexContainer">
-        
-        <div id="header">
-            <div class="searchContainer">
-                <form id = "searchField">
-                    <!-- TYPE: SUBMIT -> Submits form-data -->
-                    <button type="submit"><img src ="../images/searchIcon.png"></button>
-                    <input id="searchbar" type="text" placeholder="søg på noget" name="searchbar">
-                </form>
-            </div>
-            <div id="utilGroup">
-            <p id = "accountName"></p>
-            <img id="profilePicture">
-            <button id="knap">log in</button>
-            </div>
+      <div id="header">
+        <div class="searchContainer">
+          <form id="searchField">
+            <!-- TYPE: SUBMIT -> Submits form-data -->
+            <button type="submit">
+              <img src="../images/searchIcon.png" />
+            </button>
+            <input
+              id="searchbar"
+              type="text"
+              placeholder="søg på noget"
+              name="searchbar"
+            />
+          </form>
+        </div>
+        <div id="utilGroup">
+          <p id="accountName"></p>
+          <img id="profilePicture" />
+          <button id="knap">log in</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <button id="clearButton" onclick="removeLocal()">CLEAR STORAGE</button>
+        <div class="login">
+          <h1>REGISTER</h1>
+
+          <p>Name</p>
+          <input type="email" id="name" placeholder="Username" required />
+          <p>Password</p>
+          <input type="password" id="pw" placeholder="Password" required />
+          <input id="rgstr_btn" type="submit" value="Register" />
         </div>
 
-        <div id="content">
-            <button id="clearButton" onclick="removeLocal()">CLEAR STORAGE</button>
-            <div class="login">
-                
-                    <h1>REGISTER</h1>
-            
-                    <p>Name</p>
-                    <input type="email" id="name" placeholder="Username" required>
-                    <p>Password</p>
-                    <input type="password" id= "pw" placeholder="Password" required>
-                    <input id="rgstr_btn" type="submit" value="Register">
-            
-                
-            </div>
-            
-            <div class="login">
-                    <h1>SIGN IN</h1>
-                    <p>Name</p>
-                    <input type="email" id="userName" placeholder="Username" required>
-                    <p>Password</p>
-                    <input type="password" id= "userPw" placeholder="Password" required>
-                    <input id= "login_btn" type="submit" value="Login" onclick="check()">
-            
-                
-            </div>
+        <div class="login">
+          <h1>SIGN IN</h1>
+          <p>Name</p>
+          <input type="email" id="userName" placeholder="Username" required />
+          <p>Password</p>
+          <input type="password" id="userPw" placeholder="Password" required />
+          <input id="login_btn" type="submit" value="Login" onclick="check()" />
         </div>
+      </div>
     </div>
-    </div>
-</body>
-<script src = "../js/accountSystem.js"></script>
-    <script src = "../js/navigation.js"></script>
-    <script src="../js/statusAccount.js"></script>
-    <script src="../js/loginState.js"></script>
+  </body>
+  <script src="../js/accountSystem.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/statusAccount.js"></script>
+  <script src="../js/loginState.js"></script>
 </html>
