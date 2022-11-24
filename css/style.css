@@ -100,10 +100,6 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    
-    
-    
-    
 }
 
 .højre{
@@ -115,17 +111,12 @@ body{
 
 }
 
-
 .venstre{
     background-color: rgb(221, 220, 220);
     height: 100%;
     flex-basis: 50%;
     display: flex;
     flex-wrap: wrap;
-    
-  
-
-
 }
 
 #newsContainer{
@@ -159,8 +150,8 @@ body{
     margin-top: 8px;
     margin-bottom: 8px;
     border-radius: 10px;
-    
-    
+    display: flex;
+    flex-direction: column;
 }
 
 #infoContainer{
@@ -240,6 +231,32 @@ body{
 }
 
 
+.articleImage{
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
 
+.articleText{
+    /*gemmer teksten væk så den ikke flyder over */
+    overflow: hidden;
+    font-size:10px;
+    height: 50px;
+}
 
+#bigNewsImage{
+    width: 650px;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 10px;
+}
 
+.publisherName{
+    font-size: 10px;
+}
+
+.bottomDiv{
+    display: flex;
+    justify-content: space-between;
+}
