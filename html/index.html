@@ -9,10 +9,11 @@
 
 
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/contentStyle.css">
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <link rel="stylesheet" href="../css/newsStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/timeStyle.css">
+    <link rel="stylesheet" href="../css/weatherStyle.css">
 
 
     <!--
@@ -43,7 +44,7 @@
     <div id="flexContainer">
 
         <div id="header">
-            <div class="searchContainer">
+            <div id="searchContainer">
                 <form id="searchField">
                     <!-- TYPE: SUBMIT -> Submits form-data -->
                     <button id="submit" type="submit"><img src="../images/searchIcon.png"></button>
@@ -58,13 +59,11 @@
         </div>
 
         <div id="content">
-            <div class="venstre">
-
+            <div id="leftContainer">
                 <div id="newsContainer">
-                    <h1 id="news">Nyheder</h1>
+                    <h1 id="newsText">Nyheder</h1>
                     <div id="bigNews">
                         <img id="bigNewsImage">
-
                     </div>
                     <div id="smallNewsContainer">
                         <div class="smallNews">
@@ -121,24 +120,24 @@
 
             </div>
 
-            <div class="højre">
+            <div id="rightContainer">
                 <div id="infoContainer">
                     <h1 id="timeText">Tid</h1>
-                    <div id="time">
+                    <div id="timeBox">
                         <p id="clockTime"></p>
                         <p id="date"></p>
                         <p id="timezone">GMT+01(Centraleuropæisk normaltid)</p>
                     </div>
                     <h1 id="weatherText">Vejr</h1>
-                    <div id="weather"></div>
-                    <div id="forecast"></div>
+                    <div id="weatherBox"></div>
+                    <div id="forecastBox"></div>
                 </div>
 
             </div>
 
         </div>
-    
-    
+
+
 
 </body>
 
@@ -146,6 +145,6 @@
 <script src="../js/navigation.js"></script>
 <script src="../js/statusAccount.js"></script>
 <script src="../js/loginState.js"></script>
-<script src="../js/time.js"></script>
+<script src="../js/timeApi.js"></script>
 
 </html>

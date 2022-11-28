@@ -12,7 +12,7 @@ DET ANDET VAR LORT
 https://www.youtube.com/watch?v=E0UGGxd2DOo&ab_channel=dcode
 http://worldtimeapi.org/ */
 
-function liveTime(){
+
     
 fetch("http://worldtimeapi.org/api/timezone/Europe/Copenhagen")
   .then((response) => response.json())              
@@ -24,7 +24,6 @@ fetch("http://worldtimeapi.org/api/timezone/Europe/Copenhagen")
   
 });  
   
-}
-liveTime()
+
 
 
