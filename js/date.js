@@ -7,4 +7,4 @@ let newDate = new Date();
 
 
 
-todaysDate.innerHTML = "D."+ newDate.getDate() + days[newDate.getDay()] + "," + months[newDate.getMonth()] + newDate.getFullYear()
+todaysDate.innerHTML = "D."+ newDate.getDate() + " " + days[newDate.getDay()] + ", " + months[newDate.getMonth()] + " " + newDate.getFullYear()

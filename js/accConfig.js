@@ -24,12 +24,26 @@ document.getElementById("deleteAccount").addEventListener("click", (e)=>{
 document.getElementById("addFavourite").addEventListener("click", (e)=>{
 
     let input = document.getElementById("favouriteNews").value
+   
+
+    
+})
+
+document.getElementById("addFavourite").addEventListener("click", (e)=>{
+
+    let topic = document.getElementById("favouriteNews").value;
+
+    let favouriteTopics ={
+        topic : topic
+    }
+    localStorage.setItem("favouriteTopics", JSON.stringify(favouriteTopics))
     let ul = document.createElement("ul");
     let li = document.createElement("li");
-    li.innerHTML = input;
+    console.log(JSON.parse(localStorage.getItem("favouriteTopics")))
+
+    li.innerHTML = JSON.parse(localStorage.getItem("favouriteTopics"));
     ul.appendChild(li)
-
     document.getElementById("listContainer").appendChild(ul)
-
+    
     
 })

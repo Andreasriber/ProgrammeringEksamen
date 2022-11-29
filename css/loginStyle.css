@@ -2,8 +2,10 @@
 /*LOGIN FORM */
 
 .login {
-    margin: 50px auto;
     width: 340px;
+    height: 250px;
+    background-color: grey;
+    border-radius: 5px;
   }
 
 /* BODY og CONTAINER */
@@ -12,6 +14,7 @@ body{
     height: 100%;
     margin: 0;  
     display: flex;   
+    font-family: monospace;
 }
 
 #flexContainer{
@@ -84,6 +87,7 @@ body{
 #knap{
     margin-right: 40px;
     background-color: white;
+    cursor: pointer;
 }
 
 #accountName{
@@ -98,8 +102,6 @@ body{
     display: none;
 }
 
-
-
 /* CONTENT */
 #content{
     background-color: rgb(221, 220, 220);
@@ -109,11 +111,16 @@ body{
     justify-content: center;
 }
 
-#loginBox{
-    background-color: green;
-    height: 500px;
-    width: 500px;
+#loginContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
 }
+
+.loginStyling{
+    margin-left: 20px;
+}
+
 
 
 

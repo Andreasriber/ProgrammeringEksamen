@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/timeStyle.css">
     <link rel="stylesheet" href="../css/weatherStyle.css">
-    <script src="https://kit.fontawesome.com/46c31b1051.js" crossorigin="anonymous"></script>
+    
 
 
     <!--
@@ -47,9 +47,8 @@
         <div id="header">
             <div id="searchContainer">
                 <form id="searchField">
-                    <!-- TYPE: SUBMIT -> Submits form-data -->
                     <button id="submit" type="button"><img src="../images/searchIcon.png"></button>
-                    <input id="searchbar" type="text" placeholder="søg på noget" name="searchbar">
+                    <input id="searchbar" type="text" placeholder="Search Anything..." name="searchbar">
                 </form>
             </div>
             <div id="utilGroup">
@@ -67,11 +66,11 @@
                     <div id="bigNews">
                         <div id="bigNewsTextContainer">
                             <div id="innerText">
-                                <p id="bigArticleText">asfasd</p>
+                                <p id="bigArticleText"></p>
                                 <p id="bigArticleAuthor"></p>
                             </div>
                             <div id="buttonContainer">
-                                <button class="readMoreButton" id="button0">read more</button>
+                                <button class="readMoreButton" id="button0">Read More</button>
                             </div>
                         
                     </div>
@@ -79,60 +78,66 @@
                     </div>
                     <div id="smallNewsContainer">
                         <div id ="smallNews1" class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button1" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button1" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                         <div class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button2" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button2" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                         <div class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button3" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button3" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                         <div class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button4" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button4" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                         <div class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button5" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button5" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                         <div class="smallNews">
+                            <p class="alreadyRead">Already Read</p>
                             <img src="" alt="Nothing" class="articleImage">
                             <p class="articleText"></p>
                             <div class="bottomDiv">
-                                <p class="publisherName">hej</p>
-                                <button id ="button6" class="readMoreButton">hej</button>
+                                <p class="publisherName"></p>
+                                <button id ="button6" class="readMoreButton">Read More</button>
                             </div>
                         </div>
                     </div>
                     <div id="articleReadContainer">
                         <img id="readImage">
                         <a id = "readLink">read link</a>
-                        <p id = "readAuthor">author</p>
-                        <p id = "readTitle">sdfds</p>
-                        <p id = "readText" >brødtekst</p>
+                        <p id = "readAuthor"></p>
+                        <p id = "readTitle"></p>
+                        <p id = "readText" ></p>
     
                     </div>
     
@@ -152,26 +157,38 @@
                     <h1 id="weatherText">Vejr</h1>
                     <div id="weatherBox">
                         <div id="weatherToday">
-                            <img id="weatherTodayIcon">
-                            <p id="todayTemp"></p>
-                            <p id="location"></p>
+                            <div id="upperToday">
+                                <img id="weatherTodayIcon">
+                                <p id="todayTemp"></p>
+                            </div>
+                            <div id="lowerToday">
+                                <p id="location"></p>
+                            </div>
+                            
                         </div>
+                        <div id="sunriseSunsetContainer">
                         <div id="sunriseContainer">
                             <img id="sunriseIcon">
-                            <p id="sunriseText">Sunrise</p>
-                            <p id="sunriseTime"></p>
+                            <div id="sunriseTextContainer">
+                                <p id="sunriseText" class="sunText">Sunrise</p>
+                            <p id="sunriseTime" class="sunTime"></p>
+                            </div>
+                            
                             
                         </div>
                         <div id="sunsetContainer">
                             <img id="sunsetIcon">
-                            <p id="sunsetText">Sunset</p>
-                            <p id="sunsetTime"></p>
+                            <div id="sunsetTextContainer">
+                            <p id="sunsetText" class="sunText">Sunset</p>
+                            <p id="sunsetTime" class="sunTime"></p>
                         </div>
+                        </div>
+                    </div>
                         <button id="weatherTodayReadMore" class="readMoreButton">Read More</button>
                     </div>
                     <div id="forecastBox">
                         <div id="topContainer">
-                        <p>Forecast</p>
+                        <p id="forecastText">Forecast</p>
                         <button id="forecastReadMore" class="readMoreButton">Read More</button>
                         </div>
                         <div id="weekdaysContainer">
@@ -194,13 +211,13 @@
                                 <img id="icon6">
                             </div>
                             <div id="lower">
-                                <p id="temp0"></p>
-                                <p id="temp1"></p>
-                                <p id="temp2"></p>
-                                <p id="temp3"></p>
-                                <p id="temp4"></p>
-                                <p id="temp5"></p>
-                                <p id="temp6"></p>
+                                <p id="temp0" class="tempClass"></p>
+                                <p id="temp1" class="tempClass"></p>
+                                <p id="temp2" class="tempClass"></p>
+                                <p id="temp3" class="tempClass"></p>
+                                <p id="temp4" class="tempClass"></p>
+                                <p id="temp5" class="tempClass"></p>
+                                <p id="temp6" class="tempClass"></p>
                             </div>
                         </div>
                     </div>
@@ -220,6 +237,7 @@
 <script src="../js/date.js"></script>
 <script src="../js/weatherApi.js"></script>
 <script src="../js/searchNewsApi.js"></script>
+<script src="../js/alreadyRead.js"></script>
 
 
 

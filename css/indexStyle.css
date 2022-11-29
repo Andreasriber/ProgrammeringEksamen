@@ -2,6 +2,7 @@ body{
     height: 100%;
     margin: 0;  
     display: flex;   
+    font-family: monospace;
 }
 
 #flexContainer{
@@ -69,6 +70,7 @@ body{
 #knap{
     margin-right: 40px;
     background-color: white;
+    cursor: pointer;
 }
 
 #accountName{
@@ -81,7 +83,29 @@ body{
 
 #searchField{
     margin-left: 60px;
+    display: flex;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
+#submit{
+    background-color: white;
+    cursor: pointer;
+    border: 0;
+    width: 50px;
+}
+#searchbar{
+    width: 200px;
+    height: 30px;
+    border: 0;
+}
+
+#searchbar:focus{
+    outline: none;
+}
+
 
 /* CONTENT */
 #content{
@@ -115,6 +139,28 @@ body{
     align-items: center;
 }
 
+.readMoreButton{
+    background-color: white;
+    border-radius: 5px;
+    border: 1.5px solid 	#9c9c9c;
+    font-family: monospace;
+    font-size: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.alreadyRead{
+    position: absolute;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 8px;   
+    margin-left: 130px;
+    border: 1.5px solid #9c9c9c;
+    color: white;
+    visibility: hidden;
+}
 
 
 

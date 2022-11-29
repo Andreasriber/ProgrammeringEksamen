@@ -39,23 +39,38 @@
       </div>
 
       <div id="content">
-        <div class="login">
-          <h1>REGISTER</h1>
+        <div id="loginContainer">
+          <div class="login">
+            <div class="loginStyling">
+              <h1>REGISTER</h1>
+              <p>Name</p>
+              <input type="email" id="name" placeholder="Username" required />
+              <p>Password</p>
+              <input type="password" id="pw" placeholder="Password" required />
+              <input id="rgstr_btn" type="submit" value="Register" />
+            </div>
+          </div>
 
-          <p>Name</p>
-          <input type="email" id="name" placeholder="Username" required />
-          <p>Password</p>
-          <input type="password" id="pw" placeholder="Password" required />
-          <input id="rgstr_btn" type="submit" value="Register" />
-        </div>
-
-        <div class="login">
-          <h1>SIGN IN</h1>
-          <p>Name</p>
-          <input type="email" id="userName" placeholder="Username" required />
-          <p>Password</p>
-          <input type="password" id="userPw" placeholder="Password" required />
-          <input id="login_btn" type="submit" value="Login" />
+          <div class="login">
+            <div class="loginStyling">
+              <h1>SIGN IN</h1>
+              <p>Name</p>
+              <input
+                type="email"
+                id="userName"
+                placeholder="Username"
+                required
+              />
+              <p>Password</p>
+              <input
+                type="password"
+                id="userPw"
+                placeholder="Password"
+                required
+              />
+              <input id="login_btn" type="submit" value="Login" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

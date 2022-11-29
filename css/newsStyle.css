@@ -46,8 +46,12 @@
 .articleText{
     /*gemmer teksten væk så den ikke flyder over */
     overflow: hidden;
-    font-size:10px;
+    font-size:12px;
     height: 50px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+    
 }
 
 #bigNewsImage{
@@ -75,9 +79,10 @@
 }
 
 #button0{
-    height: 30px;
     margin-top: 145px;
-    margin-left: 30px;
+    margin-left: 60px;
+    height: 28px;
+    
     
 }
 #bigArticleText{
@@ -98,6 +103,8 @@
 
 .publisherName{
     font-size: 10px;
+    margin-left: 10px;
+    color: #9c9c9c;
 }
 
 .bottomDiv{

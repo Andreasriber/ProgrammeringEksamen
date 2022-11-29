@@ -10,6 +10,12 @@
   
     getWeather().then((dataAll) => {
     
+      document.getElementById("weatherTodayReadMore").addEventListener("click" ,(e)=>{
+        window.location.href = "https://open-meteo.com/en"
+      } )
+      document.getElementById("forecastReadMore").addEventListener("click" ,(e)=>{
+        window.location.href = "https://open-meteo.com/en"
+      } )
 
     let currentDate = new Date()
     let week = []
@@ -28,7 +34,7 @@
     for (i=0;i<7;i++){
       let averageTemp = (dataAll.daily.temperature_2m_max[i] + dataAll.daily.temperature_2m_min[i])/2;
       let tempCounter = document.getElementById(`temp${i}`)
-      tempCounter.innerHTML = averageTemp;
+      tempCounter.innerHTML = Math.round(averageTemp) + "°";
       
       let weatherTodayIcon = document.getElementById("weatherTodayIcon")
       let icons = document.getElementById(`icon${i}`);
@@ -70,8 +76,8 @@
       let sunsetToday = dataAll.daily.sunset[0]
       
 
-      document.getElementById("sunriseTime").innerHTML = sunriseToday.slice(11,16)
-      document.getElementById("sunsetTime").innerHTML = sunsetToday.slice(11,16)
+      document.getElementById("sunriseTime").innerHTML = sunriseToday.slice(11,16) + " am"
+      document.getElementById("sunsetTime").innerHTML = sunsetToday.slice(11,16) + " pm"
 
 
 
