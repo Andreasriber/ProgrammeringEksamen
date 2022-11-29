@@ -21,6 +21,7 @@
     width: 650px;
     border-radius: 10px;
     margin-left: 20px;
+    display: flex;
 }
 
 .smallNews{
@@ -39,6 +40,7 @@
     width: 200px;
     border-radius: 10px;
     object-fit: cover;
+   
 }
 
 .articleText{
@@ -53,6 +55,45 @@
     height: 180px; 
     object-fit: cover;
     border-radius: 10px;
+    position: absolute;
+}
+
+#bigNewsTextContainer{
+    display: flex;
+    z-index: 1;
+    
+    width: 100%;
+    justify-content: space-between;
+}
+#innerText{
+    
+    width: 80%;
+}
+#buttonContainer{
+    width: 20%;
+    
+}
+
+#button0{
+    height: 30px;
+    margin-top: 145px;
+    margin-left: 30px;
+    
+}
+#bigArticleText{
+    height: 45px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+#bigArticleAuthor{
+    color: white;
+    margin-left: 30px;
 }
 
 .publisherName{
@@ -63,3 +104,37 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+#articleReadContainer{
+    width: 650px;
+    height: 600px;
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#readImage{
+    width: 650px;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 10px;
+    border: 0;
+}
+
+#readAuthor{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#readTitle{
+    font-size: 20px;
+    font-style: italic;
+}
+
+#readText{
+    font-size: 15px;
+    height: 100%;
+}
+

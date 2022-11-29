@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/loginStyle.css" />
+    <title>Config</title>
+    <link rel="stylesheet" href="../css/configStyle.css" />
   </head>
   <body>
     <div id="sidebar">
@@ -39,27 +39,32 @@
       </div>
 
       <div id="content">
-        <div class="login">
-          <h1>REGISTER</h1>
-
-          <p>Name</p>
-          <input type="email" id="name" placeholder="Username" required />
-          <p>Password</p>
-          <input type="password" id="pw" placeholder="Password" required />
-          <input id="rgstr_btn" type="submit" value="Register" />
+        <div id="configContainer">
+            <p>Opdater Konto</p>
+            <p>Name</p>
+            <input type="email" id="userNameUpdate" required />
+            <p>Password</p>
+            <input type="password" id="userPwUpdate" required />
+            <button id = "updateButton">Update</button>
+            <button id="deleteAccount">Delete Account</button>
+        </div>
+        <div id="favouriteContainer">
+            <p>Type in your favourite news categories!</p>
+            <input type="text" id="favouriteNews" placeholder="Food, Business, Animals ...">
+            <button id="addFavourite">Add</button>
+            <div id="listContainer"></div>
+        
         </div>
 
-        <div class="login">
-          <h1>SIGN IN</h1>
-          <p>Name</p>
-          <input type="email" id="userName" placeholder="Username" required />
-          <p>Password</p>
-          <input type="password" id="userPw" placeholder="Password" required />
-          <input id="login_btn" type="submit" value="Login" />
+        </div>
+
+
+
+      </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="../js/accountSystem.js"></script>
   <script src="../js/navigation.js"></script>
+  <script src="../js/accConfig.js"></script>
 </html>
