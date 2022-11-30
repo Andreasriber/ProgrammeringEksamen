@@ -17,11 +17,11 @@ getApiKey().then((keys) => {
     }
 
     getArticles().then((allArticles) => {
+      console.log(allArticles)
       let bigNewsImage = document.getElementById("bigNewsImage");
       let bigArticleText = document.getElementById("bigArticleText");
       let bigArticleAuthor = document.getElementById("bigArticleAuthor");
       let smallNewsContainer = document.getElementById("smallNewsContainer");
-
       bigNewsImage.src = allArticles.articles[0].urlToImage;
       bigArticleText.innerHTML = allArticles.articles[0].title;
       bigArticleAuthor.innerHTML = "- " + allArticles.articles[0].source.name;
@@ -91,7 +91,6 @@ getApiKey().then((keys) => {
 
           setLocaleStorage(index);
           readTextArray[index - 1].style.visibility = "visible";
-
           document.getElementById("readLink").style.visibility = "visible";
         });
       }
@@ -102,7 +101,11 @@ getApiKey().then((keys) => {
       helper(btn4, 4);
       helper(btn5, 5);
       helper(btn6, 6);
+    }).catch((err)=>{
+      console.log(err)
+      alert("News didnt fully load")
     });
+    //her
   }
 
   let searchField = document.getElementById("searchbar");
@@ -115,9 +118,54 @@ getApiKey().then((keys) => {
   activate(url);
 
   document.getElementById("submit").addEventListener("click", () => {
+    let languageArray = ["ar","de","en","es","fr","he","it","nl","no","pt","ru","sv","ud","zh"]
+    let categoryArray = ["business","entertainment","general","health","science","sports","technology"]
+    let readTextArray = [
+      document.getElementById("readTextHelper1"),
+      document.getElementById("readTextHelper2"),
+      document.getElementById("readTextHelper3"),
+      document.getElementById("readTextHelper4"),
+      document.getElementById("readTextHelper5"),
+      document.getElementById("readTextHelper6"),
+    ];
+    let status = "unactive";
+
+    function categoryAndLanguage(){
+    for(i=0;i<languageArray.length;i++){
+      for(x=0;x<categoryArray.length;x++){
+      if(searchField.value === languageArray[i]){
+        status = "active";
+        let searchLanguageWord = searchField.value
+        url = "https://newsapi.org/v2/top-headlines?" +
+        `language=${searchLanguageWord}&` +
+        `apiKey=${apiNewsKey}`;
+        console.log(url)
+        for (i = 0; i < readTextArray.length; i++) {
+          readTextArray[i].style.visibility = "hidden";
+        }
+        activate(url);
+        return;
+      }else if (searchField.value === categoryArray[x]){
+        status = "active";
+        let searchCategoryWord = searchField.value
+        url = "https://newsapi.org/v2/top-headlines?" +
+        `category=${searchCategoryWord}&` +
+        "language=en&" +
+        `apiKey=${apiNewsKey}`;
+        console.log(url)
+        for (i = 0; i < readTextArray.length; i++) {
+          readTextArray[i].style.visibility = "hidden";
+        }
+        activate(url);
+        return;
+      } 
+    }}
+  }
+      
+    function searchWord(){
     if (searchField.value === "") {
       alert("error - no search value");
-    } else {
+    } else  {
       let searchWord = searchField.value;
       url =
         "https://newsapi.org/v2/everything?" +
@@ -125,18 +173,30 @@ getApiKey().then((keys) => {
         "from=2022-11-24&" +
         "sortBy=popularity&" +
         `apiKey=${apiNewsKey}`;
-      let readTextArray = [
-        document.getElementById("readTextHelper1"),
-        document.getElementById("readTextHelper2"),
-        document.getElementById("readTextHelper3"),
-        document.getElementById("readTextHelper4"),
-        document.getElementById("readTextHelper5"),
-        document.getElementById("readTextHelper6"),
-      ];
       for (i = 0; i < readTextArray.length; i++) {
         readTextArray[i].style.visibility = "hidden";
       }
       activate(url);
     }
+  }
+
+  categoryAndLanguage();
+  if(status === "unactive"){
+    searchWord()
+  }
   });
 });
+
+
+/* function searchLanguage(){
+      let languageArray = ["ar","de","en","es","fr","he","it","nl","no","pt","ru","sv","ud","zh"]
+      for(i=0;i<languageArray.length;i++){
+        if(searchField.value === languageArray[i]){
+          let searchLanguageWord = searchField.value
+          url = "https://newsapi.org/v2/top-headlines?" +
+          `language=${searchLanguageWord}&` +
+          `apiKey=${apiNewsKey}`;
+        }
+      }
+    }
+    */

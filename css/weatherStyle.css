@@ -158,4 +158,9 @@ display: flex;
     font-weight: bold;
 }
 
+.iconMiddleWeather{
+    height: 16px;
+    width: 16px;
+}
+
 
