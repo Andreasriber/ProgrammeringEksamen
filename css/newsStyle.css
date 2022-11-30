@@ -127,7 +127,6 @@
     height: 180px; 
     object-fit: cover;
     border-radius: 10px;
-    border: 0;
 }
 
 #readAuthor{
@@ -143,5 +142,9 @@
 #readText{
     font-size: 15px;
     height: 100%;
+}
+
+#readLink{
+    visibility: hidden;
 }
 
