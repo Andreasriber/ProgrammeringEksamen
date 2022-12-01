@@ -9,7 +9,7 @@
     }
   
     getWeather().then((dataAll) => {
-    
+    console.log(dataAll)
       document.getElementById("weatherTodayReadMore").addEventListener("click" ,(e)=>{
         window.location.href = "https://open-meteo.com/en"
       } )
@@ -19,8 +19,25 @@
 
     let currentDate = new Date()
     let week = []
+    //console.log(currentDate.getDay())
+    //console.log(currentDate.toLocaleDateString('en-us',{weekday:"short"}))
+    let helpWeek = dataAll.daily.time
+    
+    let array = []
 
-    for(i=2;i<=8;i++){
+    for(i=0;i<7;i++){
+    let mega = helpWeek[i]
+    let hihi = new Date(mega)
+    array.push(hihi)
+    }
+    
+    console.log(array)
+    for(i=0;i<7;i++){
+      //document.getElementById(`text${i}`) = array[i]
+    }
+   
+
+    for(i=1;i<=7;i++){
       let firstDay = currentDate.getDate()-currentDate.getDay()+i
       let day = new Date(currentDate.setDate(firstDay)).toLocaleDateString('en-us',{weekday:"short"})
       week.push(day)

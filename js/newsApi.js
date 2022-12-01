@@ -17,7 +17,6 @@ getApiKey().then((keys) => {
     }
 
     getArticles().then((allArticles) => {
-      console.log(allArticles)
       let bigNewsImage = document.getElementById("bigNewsImage");
       let bigArticleText = document.getElementById("bigArticleText");
       let bigArticleAuthor = document.getElementById("bigArticleAuthor");
@@ -139,7 +138,7 @@ getApiKey().then((keys) => {
         url = "https://newsapi.org/v2/top-headlines?" +
         `language=${searchLanguageWord}&` +
         `apiKey=${apiNewsKey}`;
-        console.log(url)
+        
         for (i = 0; i < readTextArray.length; i++) {
           readTextArray[i].style.visibility = "hidden";
         }
@@ -152,7 +151,7 @@ getApiKey().then((keys) => {
         `category=${searchCategoryWord}&` +
         "language=en&" +
         `apiKey=${apiNewsKey}`;
-        console.log(url)
+       
         for (i = 0; i < readTextArray.length; i++) {
           readTextArray[i].style.visibility = "hidden";
         }

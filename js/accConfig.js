@@ -1,3 +1,43 @@
+if (localStorage.getItem("favouriteTopics") === null) {
+    localStorage.setItem("favouriteTopics", "[]");
+  }
+let getFavouriteTopics = JSON.parse(localStorage.getItem("favouriteTopics"))
+
+
+function updateFavourite(){
+    
+    let listContainer = document.getElementById("ulContainer")
+
+    for(i=0;i<getFavouriteTopics.length;i++){
+        let li = document.createElement("li");
+        li.innerHTML = getFavouriteTopics[i]
+        listContainer.appendChild(li)
+    }
+}
+updateFavourite()
+
+function createFavourite(inputValue){
+    let favouriteArray = [];
+    favouriteArray = getFavouriteTopics;
+    favouriteArray.push(inputValue)
+    localStorage.setItem("favouriteTopics", JSON.stringify(favouriteArray))
+    location.reload()
+}
+
+document.getElementById("addFavourite").addEventListener("click", (e)=>{
+    let topic = document.getElementById("favouriteNews").value;
+    if(topic === null){
+        alert("Not a valid input")
+    }else{
+    createFavourite(topic)
+    }
+})
+
+document.getElementById("deleteFavourite").addEventListener("click", (e)=>{
+    localStorage.removeItem("favouriteTopics")
+    location.reload()
+})
+
 
 document.getElementById("userNameUpdate").value = localStorage.getItem("name")
 document.getElementById("userPwUpdate").value = localStorage.getItem("pw")
@@ -13,20 +53,4 @@ document.getElementById("deleteAccount").addEventListener("click", (e)=>{
     localStorage.clear()
     location.href = "../html/login.html"
 })
-/*
-document.getElementById("addFavourite").addEventListener("click", (e)=>{
 
-    let topic = document.getElementById("favouriteNews").value;
-
-    let favouriteTopics = []
-        
-    
-    localStorage.setItem("favouriteTopics", JSON.stringify(favouriteTopics))
-    let ul = document.createElement("ul");
-    let li = document.createElement("li");
-
-    li.innerHTML = JSON.parse(localStorage.getItem("favouriteTopics"));
-    ul.appendChild(li)
-    document.getElementById("listContainer").appendChild(ul)
-})
-*/
