@@ -1,43 +1,24 @@
-const url =
-  "https://api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5689&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Europe%2FBerlin";
+
 
 async function getWeather() {
+  const url =
+  "https://api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5689&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Europe%2FBerlin";
   const data = await fetch(url);
   return data.json();
 }
 
 getWeather().then((dataAll) => {
-  console.log(dataAll);
-  document
-    .getElementById("weatherTodayReadMore")
-    .addEventListener("click", (e) => {
+
+function setReadMoreLink(){
+  document.getElementById("weatherTodayReadMore").addEventListener("click", (e) => {
       window.location.href = "https://open-meteo.com/en";
     });
   document.getElementById("forecastReadMore").addEventListener("click", (e) => {
     window.location.href = "https://open-meteo.com/en";
   });
+}
 
-  let currentDate = new Date();
-  let week = [];
-  //console.log(currentDate.getDay())
-  //console.log(currentDate.toLocaleDateString('en-us',{weekday:"short"}))
-  /*let helpWeek = dataAll.daily.time
-
-    
-    let array = []
-
-    for(i=0;i<7;i++){
-    let mega = helpWeek[i]
-    let hihi = new Date(mega)
-    array.push(hihi)
-    }
-    
-    console.log(array)
-    for(i=0;i<7;i++){
-      //document.getElementById(`text${i}`) = array[i]
-    }
-    */
-
+function setDynamicForecastNames(){
   for (i = 0; i < 7; i++) {
     let dayOfTheWeek = new Date(dataAll.daily.time[i]);
     let convertDay = dayOfTheWeek.toLocaleDateString("en-us", {
@@ -45,21 +26,9 @@ getWeather().then((dataAll) => {
     });
     document.getElementById(`text${i}`).innerHTML = convertDay;
   }
-  /*
-  for (i = 1; i <= 7; i++) {
-    let firstDay = currentDate.getDate() - currentDate.getDay() + i;
-    let day = new Date(currentDate.setDate(firstDay)).toLocaleDateString(
-      "en-us",
-      { weekday: "short" }
-    );
-    week.push(day);
-  }
+}
 
-  for (i = 0; i < 7; i++) {
-    let counter = document.getElementById(`text${i}`);
-    counter.innerHTML = week[i];
-  }
-*/
+function setDynamicForecastTemp(){
   for (i = 0; i < 7; i++) {
     let averageTemp =
       (dataAll.daily.temperature_2m_max[i] +
@@ -67,7 +36,11 @@ getWeather().then((dataAll) => {
       2;
     let tempCounter = document.getElementById(`temp${i}`);
     tempCounter.innerHTML = Math.round(averageTemp) + "°";
+      }
+}
 
+function setDynamicIcons(){
+    for (i = 0; i < 7; i++) {
     let weatherTodayIcon = document.getElementById("weatherTodayIcon");
     let icons = document.getElementById(`icon${i}`);
     let rain = dataAll.daily.rain_sum[i];
@@ -83,14 +56,19 @@ getWeather().then((dataAll) => {
     } else if (wind > 20) {
       icons.src = "../images/icons/thunder.png";
       weatherTodayIcon.src = "../images/icons/thunder.png";
-    } else if (averageTemp > 4) {
+    } else if ((dataAll.daily.temperature_2m_max[i] +
+      dataAll.daily.temperature_2m_min[i]) /
+    2 > 4) {
       icons.src = "../images/icons/sun.png";
       weatherTodayIcon.src = "../images/icons/sun.png";
     } else {
       icons.src = "../images/icons/cloudy.png";
       weatherTodayIcon.src = "../images/icons/cloudy.png";
     }
-
+  }
+}
+ 
+function setWeatherToday(){
     let d = new Date();
     let hour = d.getHours();
     let apiHour = dataAll.hourly.temperature_2m[hour];
@@ -98,6 +76,9 @@ getWeather().then((dataAll) => {
     document.getElementById("todayTemp").innerHTML = apiHour + "°";
     document.getElementById("location").innerHTML = "Copenhagen, Denmark";
 
+}
+ 
+function setSunriseSunset(){
     document.getElementById("sunriseIcon").src = "../images/icons/sunrise.png";
     document.getElementById("sunsetIcon").src = "../images/icons/sunset.png";
 
@@ -108,5 +89,19 @@ getWeather().then((dataAll) => {
       sunriseToday.slice(11, 16) + " am";
     document.getElementById("sunsetTime").innerHTML =
       sunsetToday.slice(11, 16) + " pm";
-  }
+}
+  
+
+
+
+function setWeatherContent(){
+  setReadMoreLink();
+  setDynamicForecastNames();
+  setDynamicForecastTemp();
+  setDynamicIcons();
+  setWeatherToday();
+  setSunriseSunset();
+}
+setWeatherContent();
+
 });

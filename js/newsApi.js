@@ -18,6 +18,7 @@ getApiKey().then((keys) => {
 
     getArticles()
       .then((allArticles) => {
+        
         function setBigArticleContent() {
           document.getElementById("bigNewsImage").src =
             allArticles.articles[0].urlToImage;
