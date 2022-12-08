@@ -120,6 +120,7 @@
     margin-left: 20px;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 #readImage{

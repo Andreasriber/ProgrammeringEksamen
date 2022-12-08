@@ -1,26 +1,28 @@
-let clockTime = document.getElementById("clockTime")
+let clockTime = document.getElementById("clockTime");
 
-function startClock(){
-
+function startClock() {
   let today = new Date();
-  
-  let hours = today.getHours()
-  let minutes = today.getMinutes()
-  let seconds = today.getSeconds()
 
-  minutes = checkTime(minutes)
-  seconds = checkTime(seconds)
-  
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+
+  minutes = checkTime(minutes);
+  seconds = checkTime(seconds);
+
   clockTime.innerHTML = hours + ":" + minutes + ":" + seconds;
-  setTimeout(startClock,1000)
+  setTimeout(startClock, 1000);
 }
 
-function checkTime(i){
-  if (i<10){
-    i = "0" + i
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
   }
   return i;
 }
 
-startClock()
+startClock();
 
+function clockTest() {
+  console.log("Det virker");
+}

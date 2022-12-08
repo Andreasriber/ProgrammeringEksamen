@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +9,7 @@
 
     <link rel="stylesheet" href="../css/indexStyle.css" />
     <link rel="stylesheet" href="../css/newsStyle.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/timeStyle.css" />
     <link rel="stylesheet" href="../css/weatherStyle.css" />
 
@@ -32,211 +30,204 @@
         
 
     -->
-  </head>
+</head>
 
-  <body>
+<body>
+    <p id="anton">ANTON HIHIHIHASDASDASDA</p>
     <div id="sidebar">
-      <button id="homeLogo"><img src="../images/home_page.png" /></button>
-      <button id="likedLogo"><img src="../images/heart.png" /></button>
+        <button id="homeLogo"><img src="../images/home_page.png" /></button>
+        <button id="likedLogo"><img src="../images/heart.png" /></button>
     </div>
 
     <div id="flexContainer">
-      <div id="header">
-        <div id="searchContainer">
-          <form id="searchField">
-            <button id="submit" type="button">
-              <img src="../images/searchIcon.png" />
-            </button>
-            <input
-              id="searchbar"
-              type="text"
-              placeholder="Search Anything..."
-              name="searchbar"
-            />
-          </form>
+        <div id="header">
+            <div id="searchContainer">
+                <form id="searchField">
+                    <button id="submit" type="button">
+                        <img src="../images/searchIcon.png" />
+                    </button>
+                    <input id="searchbar" type="text" placeholder="Search Anything..." name="searchbar" />
+                </form>
+            </div>
+
+            <div id="utilGroup">
+                <p id="accountName"></p>
+                <img id="profilePicture" src="../images/userNone.png" alt="her er et billede" />
+
+                <button id="knap"></button>
+            </div>
         </div>
 
-        <div id="utilGroup">
-          <p id="accountName"></p>
-          <img
-            id="profilePicture"
-            src="../images/userNone.png"
-            alt="her er et billede"
-          />
+        <div id="content">
+            <div id="leftContainer">
+                <div id="newsContainer">
+                    <h1 id="newsText">Nyheder</h1>
+                    <div id="bigNews">
+                        <div id="bigNewsTextContainer">
+                            <div id="innerText">
+                                <p class="alreadyRead" id="readTextHelper0">Already Read</p>
+                                <p id="bigArticleText"></p>
+                                <p id="bigArticleAuthor"></p>
+                            </div>
+                            <div id="buttonContainer">
+                                <button class="readMoreButton" id="button0">Read More</button>
+                            </div>
+                        </div>
+                        <img id="bigNewsImage" />
+                    </div>
+                    <div id="smallNewsContainer">
+                        <div id="smallNews1" class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper1">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button1" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                        <div class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper2">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button2" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                        <div class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper3">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button3" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                        <div class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper4">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button4" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                        <div class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper5">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button5" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                        <div class="smallNews">
+                            <p class="alreadyRead" id="readTextHelper6">Already Read</p>
+                            <img src="" alt="Nothing" class="articleImage" />
+                            <p class="articleText"></p>
+                            <div class="bottomDiv">
+                                <p class="publisherName"></p>
+                                <button id="button6" class="readMoreButton">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="articleReadContainer">
+                        <img id="readImage" />
+                        <a id="readLink">Read Full Article Here</a>
+                        <p id="readAuthor"></p>
+                        <p id="readTitle"></p>
+                        <p id="readText"></p>
+                    </div>
+                </div>
+            </div>
 
-          <button id="knap"></button>
+            <div id="rightContainer">
+                <div id="infoContainer">
+                    <h1 id="timeText">Tid</h1>
+                    <div id="timeBox">
+                        <p id="clockTime"></p>
+                        <p id="date"></p>
+                        <p id="timezone">GMT+01(Centraleuropæisk normaltid)</p>
+                    </div>
+                    <h1 id="weatherText">Vejr</h1>
+                    <div id="weatherBox">
+                        <div id="weatherToday">
+                            <div id="upperToday">
+                                <img id="weatherTodayIcon" />
+                                <p id="todayTemp"></p>
+                            </div>
+                            <div id="lowerToday">
+                                <p id="location"></p>
+                            </div>
+                        </div>
+                        <div id="sunriseSunsetContainer">
+                            <div id="sunriseContainer">
+                                <img id="sunriseIcon" />
+                                <div id="sunriseTextContainer">
+                                    <p id="sunriseText" class="sunText">Sunrise</p>
+                                    <p id="sunriseTime" class="sunTime"></p>
+                                </div>
+                            </div>
+                            <div id="sunsetContainer">
+                                <img id="sunsetIcon" />
+                                <div id="sunsetTextContainer">
+                                    <p id="sunsetText" class="sunText">Sunset</p>
+                                    <p id="sunsetTime" class="sunTime"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="weatherTodayReadMore" class="readMoreButton">
+                            Read More
+                        </button>
+                    </div>
+                    <div id="forecastBox">
+                        <div id="topContainer">
+                            <p id="forecastText">Forecast</p>
+                            <button id="forecastReadMore" class="readMoreButton">
+                                Read More
+                            </button>
+                        </div>
+                        <div id="weekdaysContainer">
+                            <div id="upper">
+                                <p id="text0"></p>
+                                <p id="text1"></p>
+                                <p id="text2"></p>
+                                <p id="text3"></p>
+                                <p id="text4"></p>
+                                <p id="text5"></p>
+                                <p id="text6"></p>
+                            </div>
+                            <div id="middle">
+                                <img id="icon0" class="iconMiddleWeather" />
+                                <img id="icon1" class="iconMiddleWeather" />
+                                <img id="icon2" class="iconMiddleWeather" />
+                                <img id="icon3" class="iconMiddleWeather" />
+                                <img id="icon4" class="iconMiddleWeather" />
+                                <img id="icon5" class="iconMiddleWeather" />
+                                <img id="icon6" class="iconMiddleWeather" />
+                            </div>
+                            <div id="lower">
+                                <p id="temp0" class="tempClass"></p>
+                                <p id="temp1" class="tempClass"></p>
+                                <p id="temp2" class="tempClass"></p>
+                                <p id="temp3" class="tempClass"></p>
+                                <p id="temp4" class="tempClass"></p>
+                                <p id="temp5" class="tempClass"></p>
+                                <p id="temp6" class="tempClass"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div id="content">
-        <div id="leftContainer">
-          <div id="newsContainer">
-            <h1 id="newsText">Nyheder</h1>
-            <div id="bigNews">
-              <div id="bigNewsTextContainer">
-                <div id="innerText">
-                  <p class="alreadyRead" id="readTextHelper0">Already Read</p>
-                  <p id="bigArticleText"></p>
-                  <p id="bigArticleAuthor"></p>
-                </div>
-                <div id="buttonContainer">
-                  <button class="readMoreButton" id="button0">Read More</button>
-                </div>
-              </div>
-              <img id="bigNewsImage" />
-            </div>
-            <div id="smallNewsContainer">
-              <div id="smallNews1" class="smallNews">
-                <p class="alreadyRead" id="readTextHelper1">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button1" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-              <div class="smallNews">
-                <p class="alreadyRead" id="readTextHelper2">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button2" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-              <div class="smallNews">
-                <p class="alreadyRead" id="readTextHelper3">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button3" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-              <div class="smallNews">
-                <p class="alreadyRead" id="readTextHelper4">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button4" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-              <div class="smallNews">
-                <p class="alreadyRead" id="readTextHelper5">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button5" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-              <div class="smallNews">
-                <p class="alreadyRead" id="readTextHelper6">Already Read</p>
-                <img src="" alt="Nothing" class="articleImage" />
-                <p class="articleText"></p>
-                <div class="bottomDiv">
-                  <p class="publisherName"></p>
-                  <button id="button6" class="readMoreButton">Read More</button>
-                </div>
-              </div>
-            </div>
-            <div id="articleReadContainer">
-              <img id="readImage" src="" />
-              <a id="readLink">Read Full Article Here</a>
-              <p id="readAuthor"></p>
-              <p id="readTitle"></p>
-              <p id="readText"></p>
-            </div>
-          </div>
-        </div>
-
-        <div id="rightContainer">
-          <div id="infoContainer">
-            <h1 id="timeText">Tid</h1>
-            <div id="timeBox">
-              <p id="clockTime"></p>
-              <p id="date"></p>
-              <p id="timezone">GMT+01(Centraleuropæisk normaltid)</p>
-            </div>
-            <h1 id="weatherText">Vejr</h1>
-            <div id="weatherBox">
-              <div id="weatherToday">
-                <div id="upperToday">
-                  <img id="weatherTodayIcon" />
-                  <p id="todayTemp"></p>
-                </div>
-                <div id="lowerToday">
-                  <p id="location"></p>
-                </div>
-              </div>
-              <div id="sunriseSunsetContainer">
-                <div id="sunriseContainer">
-                  <img id="sunriseIcon" />
-                  <div id="sunriseTextContainer">
-                    <p id="sunriseText" class="sunText">Sunrise</p>
-                    <p id="sunriseTime" class="sunTime"></p>
-                  </div>
-                </div>
-                <div id="sunsetContainer">
-                  <img id="sunsetIcon" />
-                  <div id="sunsetTextContainer">
-                    <p id="sunsetText" class="sunText">Sunset</p>
-                    <p id="sunsetTime" class="sunTime"></p>
-                  </div>
-                </div>
-              </div>
-              <button id="weatherTodayReadMore" class="readMoreButton">
-                Read More
-              </button>
-            </div>
-            <div id="forecastBox">
-              <div id="topContainer">
-                <p id="forecastText">Forecast</p>
-                <button id="forecastReadMore" class="readMoreButton">
-                  Read More
-                </button>
-              </div>
-              <div id="weekdaysContainer">
-                <div id="upper">
-                  <p id="text0"></p>
-                  <p id="text1"></p>
-                  <p id="text2"></p>
-                  <p id="text3"></p>
-                  <p id="text4"></p>
-                  <p id="text5"></p>
-                  <p id="text6"></p>
-                </div>
-                <div id="middle">
-                  <img id="icon0" class="iconMiddleWeather" />
-                  <img id="icon1" class="iconMiddleWeather" />
-                  <img id="icon2" class="iconMiddleWeather" />
-                  <img id="icon3" class="iconMiddleWeather" />
-                  <img id="icon4" class="iconMiddleWeather" />
-                  <img id="icon5" class="iconMiddleWeather" />
-                  <img id="icon6" class="iconMiddleWeather" />
-                </div>
-                <div id="lower">
-                  <p id="temp0" class="tempClass"></p>
-                  <p id="temp1" class="tempClass"></p>
-                  <p id="temp2" class="tempClass"></p>
-                  <p id="temp3" class="tempClass"></p>
-                  <p id="temp4" class="tempClass"></p>
-                  <p id="temp5" class="tempClass"></p>
-                  <p id="temp6" class="tempClass"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
 
-  <script src="../js/newsApi.js"></script>
-  <script src="../js/navigation.js"></script>
-  <script src="../js/clock.js"></script>
-  <script src="../js/date.js"></script>
-  <script src="../js/weatherApi.js"></script>
-  <script src="../js/alreadyRead.js"></script>
+<script src="../js/newsApi.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/clock.js"></script>
+<script src="../js/date.js"></script>
+<script src="../js/weatherApi.js"></script>
+<script src="../js/alreadyRead.js"></script>
+
 </html>

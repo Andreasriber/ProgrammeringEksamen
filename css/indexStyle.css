@@ -161,3 +161,18 @@ body{
     color: white;
     visibility: hidden;
 }
+
+
+
+
+#anton{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border:solid red 2px;
+    /* standard er z index 1, så vi tager selvfølgelig index 2 */
+    z-index: 2;
+    margin-left: 450px;
+    margin-top: 70px;
+    background-color: blue;
+}
