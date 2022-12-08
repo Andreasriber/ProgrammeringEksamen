@@ -14,8 +14,6 @@ if(state === "active"){
     document.getElementById("knap").addEventListener("click", (e)=>{
         localStorage.setItem("status", "unactive")
     })
-    
-
 } else{
     document.getElementById("profilePicture").src = "../images/userNone.png"
     document.getElementById("accountName").innerHTML = ""
