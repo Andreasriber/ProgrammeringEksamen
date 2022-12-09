@@ -18,7 +18,7 @@ getApiKey().then((keys) => {
 
     getArticles()
       .then((allArticles) => {
-        
+        console.log(allArticles);
         function setBigArticleContent() {
           document.getElementById("bigNewsImage").src =
             allArticles.articles[0].urlToImage;
@@ -44,6 +44,54 @@ getApiKey().then((keys) => {
           }
         }
         setSmallArticleContent();
+        //----------------------------
+        if (localStorage.getItem("favouriteNews") === null) {
+          localStorage.setItem("favouriteNews", "[]");
+        }
+
+        let mainContainer = document.getElementById("smallNewsContainer");
+        let oldFavourite = JSON.parse(localStorage.getItem("favouriteNews"));
+
+        function setFavourite(button, index) {
+          button.addEventListener("click", () => {
+            oldFavourite.push(
+              mainContainer.children[index].children[2].innerHTML
+            );
+            localStorage.setItem("favouriteNews", JSON.stringify(oldFavourite));
+          });
+        }
+
+        function checkFavourite() {
+          for (i = 0; i < oldFavourite.length; i++) {
+            for (p = 0; p < 6; p++) {
+              if (
+                mainContainer.children[p].children[2].innerHTML ===
+                oldFavourite[i]
+              ) {
+                document.getElementById(
+                  `favouriteButton${p + 1}`
+                ).style.backgroundColor = "blue";
+              }
+            }
+          }
+        }
+
+        let favouriteButton1 = document.getElementById("favouriteButton1");
+        let favouriteButton2 = document.getElementById("favouriteButton2");
+        let favouriteButton3 = document.getElementById("favouriteButton3");
+        let favouriteButton4 = document.getElementById("favouriteButton4");
+        let favouriteButton5 = document.getElementById("favouriteButton5");
+        let favouriteButton6 = document.getElementById("favouriteButton6");
+
+        setFavourite(favouriteButton1, 0);
+        setFavourite(favouriteButton2, 1);
+        setFavourite(favouriteButton3, 2);
+        setFavourite(favouriteButton4, 3);
+        setFavourite(favouriteButton5, 4);
+        setFavourite(favouriteButton6, 5);
+        checkFavourite();
+
+        //-----------------------
 
         let btn0 = document.getElementById("button0");
         let btn1 = document.getElementById("button1");
@@ -68,6 +116,8 @@ getApiKey().then((keys) => {
         let readAuthor = document.getElementById("readAuthor");
         let readTitle = document.getElementById("readTitle");
         let readText = document.getElementById("readText");
+
+        // LAV STOR ARTIKEL OGSÅ
 
         function checkIfArticleRead() {
           for (p = 0; p < 6; p++) {
@@ -132,7 +182,7 @@ getApiKey().then((keys) => {
 
   activate(url);
 
-  document.getElementById("submit").addEventListener("click", () => {
+  document.getElementById("submit").addEventListener("click", (e) => {
     //prettier-ignore
     let languageArray = ["ar","de","en","es","fr","he","it","nl","no","pt","ru","sv","ud","zh",];
     //prettier-ignore
