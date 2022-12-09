@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourite</title>
+    <link rel="stylesheet" href="../css/mainStyle.css" />
+    <link rel="stylesheet" href="../css/favouriteStyle.css" />
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <button id="homeLogo">
+        <img src="../images/home_page.png" />
+      </button>
+      <button id="likedLogo"><img src="../images/heart.png" /></button>
+    </div>
+
+    <div id="flexContainer">
+      <div id="header">
+        <div class="searchContainer">
+          <form id="searchField">
+            <button type="submit">
+              <img src="../images/searchIcon.png" />
+            </button>
+            <input
+              id="searchbar"
+              type="text"
+              placeholder="søg på noget"
+              name="searchbar"
+            />
+          </form>
+        </div>
+        <div id="utilGroup">
+          <p id="accountName"></p>
+          <img id="profilePicture" />
+          <button id="knap"></button>
+        </div>
+      </div>
+
+      <div id="content"></div>
+    </div>
+  </body>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/favouriteArticles.js"></script>
+</html>

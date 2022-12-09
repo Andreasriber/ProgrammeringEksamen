@@ -54,3 +54,14 @@ document.getElementById("deleteAccount").addEventListener("click", (e)=>{
     location.href = "../html/login.html"
 })
 
+function setProfilePicure(id, imageLocation){
+    document.getElementsByClassName("accountImage")[id].addEventListener("click", () =>{
+        localStorage.setItem("profilePicture", imageLocation);
+        document.getElementById("profilePicture").src = imageLocation;
+    })
+}
+setProfilePicure(0,"../images/profilepicture/earth.png" )
+setProfilePicure(1,"../images/profilepicture/fire.png" )
+setProfilePicure(2,"../images/profilepicture/water-drop.png" )
+setProfilePicure(3,"../images/profilepicture/leaf.png" )
+

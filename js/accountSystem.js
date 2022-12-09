@@ -4,7 +4,12 @@ document.getElementById("rgstr_btn").addEventListener("click", (event) => {
   const name = document.getElementById("name");
   const pw = document.getElementById("pw");
   
-  localStorage.setItem("name", name.value);
+  if(pw.value.length === 0 || name.value.length === 0){
+    alert("Please type in a username/password")
+  } else if(pw.value.length < 8){
+    alert("Your password must be atleast 8 characters")
+  } else{
+    localStorage.setItem("name", name.value);
   localStorage.setItem("pw", pw.value);
   
   alert("Your account has been created");
@@ -12,7 +17,9 @@ document.getElementById("rgstr_btn").addEventListener("click", (event) => {
   document.getElementById("accountName").innerHTML =
     localStorage.getItem("name");
     localStorage.setItem("status", "active");
-    location.reload();
+    location.href = "../html/index.html"
+  }
+  
 });
 
 //checking - LOGIN

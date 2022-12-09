@@ -31,6 +31,7 @@ body{
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     border: 0;  
+    cursor: pointer;
 }
 
 #likedLogo{
@@ -42,6 +43,7 @@ body{
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     border: 0;
+    cursor: pointer;
 }
 
 /* HEADER */
@@ -150,7 +152,7 @@ body{
 #content{
     background-color:rgb(221, 220, 220);
     width: 100%;
-    height: 100%;
+    min-height: 92vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -203,8 +205,13 @@ body{
 
 .favouriteButton{
     position: absolute;
-    height: 30px;
-    width: 30px;
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    cursor: pointer;
+    
 }
+
+
 
 

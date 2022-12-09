@@ -1,0 +1,63 @@
+
+
+
+/* CONTENT */
+#content{
+    background-color: rgb(221, 220, 220);
+    display: flex;
+    min-height: 92vh;
+    flex-wrap: wrap;
+    
+}
+
+.smallNews{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.articleImage{
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+   
+}
+
+.articleText{
+    /*gemmer teksten væk så den ikke flyder over */
+    overflow: hidden;
+    font-size:12px;
+    height: 50px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+.publisherName{
+    font-size: 10px;
+    margin-left: 10px;
+    color: #9c9c9c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

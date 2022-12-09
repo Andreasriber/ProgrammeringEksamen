@@ -1,6 +1,4 @@
-if (localStorage.getItem("alreadyRead") === null) {
-  localStorage.setItem("alreadyRead", "[]");
-}
+
 
 async function getApiKey() {
   let response = await fetch("../data/apiKeys.json");
@@ -10,7 +8,7 @@ async function getApiKey() {
 getApiKey().then((keys) => {
   let apiNewsKey = keys.apiKeys.newsKey;
 
-  function activate(url) {
+  function startSearch(url) {
     async function getArticles() {
       const articles = await fetch(url);
       return articles.json();
@@ -18,7 +16,9 @@ getApiKey().then((keys) => {
 
     getArticles()
       .then((allArticles) => {
-        console.log(allArticles);
+        if (localStorage.getItem("alreadyRead") === null) {
+          localStorage.setItem("alreadyRead", "[]");
+        }
         function setBigArticleContent() {
           document.getElementById("bigNewsImage").src =
             allArticles.articles[0].urlToImage;
@@ -27,8 +27,6 @@ getApiKey().then((keys) => {
           document.getElementById("bigArticleAuthor").innerHTML =
             "- " + allArticles.articles[0].source.name;
         }
-        setBigArticleContent();
-
         function setSmallArticleContent() {
           for (i = 1; i < 7; i++) {
             let smallNewsContainer =
@@ -43,56 +41,6 @@ getApiKey().then((keys) => {
               allArticles.articles[i].source.name;
           }
         }
-        setSmallArticleContent();
-        //----------------------------
-        if (localStorage.getItem("favouriteNews") === null) {
-          localStorage.setItem("favouriteNews", "[]");
-        }
-
-        let mainContainer = document.getElementById("smallNewsContainer");
-        let oldFavourite = JSON.parse(localStorage.getItem("favouriteNews"));
-
-        function setFavourite(button, index) {
-          button.addEventListener("click", () => {
-            oldFavourite.push(
-              mainContainer.children[index].children[2].innerHTML
-            );
-            localStorage.setItem("favouriteNews", JSON.stringify(oldFavourite));
-          });
-        }
-
-        function checkFavourite() {
-          for (i = 0; i < oldFavourite.length; i++) {
-            for (p = 0; p < 6; p++) {
-              if (
-                mainContainer.children[p].children[2].innerHTML ===
-                oldFavourite[i]
-              ) {
-                document.getElementById(
-                  `favouriteButton${p + 1}`
-                ).style.backgroundColor = "blue";
-              }
-            }
-          }
-        }
-
-        let favouriteButton1 = document.getElementById("favouriteButton1");
-        let favouriteButton2 = document.getElementById("favouriteButton2");
-        let favouriteButton3 = document.getElementById("favouriteButton3");
-        let favouriteButton4 = document.getElementById("favouriteButton4");
-        let favouriteButton5 = document.getElementById("favouriteButton5");
-        let favouriteButton6 = document.getElementById("favouriteButton6");
-
-        setFavourite(favouriteButton1, 0);
-        setFavourite(favouriteButton2, 1);
-        setFavourite(favouriteButton3, 2);
-        setFavourite(favouriteButton4, 3);
-        setFavourite(favouriteButton5, 4);
-        setFavourite(favouriteButton6, 5);
-        checkFavourite();
-
-        //-----------------------
-
         let btn0 = document.getElementById("button0");
         let btn1 = document.getElementById("button1");
         let btn2 = document.getElementById("button2");
@@ -117,8 +65,6 @@ getApiKey().then((keys) => {
         let readTitle = document.getElementById("readTitle");
         let readText = document.getElementById("readText");
 
-        // LAV STOR ARTIKEL OGSÅ
-
         function checkIfArticleRead() {
           for (p = 0; p < 6; p++) {
             for (x = 0; x < oldalreadyRead.length; x++) {
@@ -129,13 +75,14 @@ getApiKey().then((keys) => {
                 ) === oldalreadyRead[x].slice(0, 10)
               ) {
                 readTextArray[p].style.visibility = "visible";
-              }
+              } 
+              
             }
           }
         }
-        checkIfArticleRead();
+        
 
-        function helper(button, index) {
+        function setReadArticleContent(button, index) {
           button.addEventListener("click", (e) => {
             document.getElementById("articleReadContainer").style.display =
               "flex";
@@ -158,31 +105,85 @@ getApiKey().then((keys) => {
             document.getElementById("readLink").style.visibility = "visible";
           });
         }
-        helper(btn0, 0);
-        helper(btn1, 1);
-        helper(btn2, 2);
-        helper(btn3, 3);
-        helper(btn4, 4);
-        helper(btn5, 5);
-        helper(btn6, 6);
+        
+        function favouriteFunction(){
+          if (localStorage.getItem("favouriteNews") === null) {
+            localStorage.setItem("favouriteNews", "[]");
+          }
+  
+          let mainContainer = document.getElementById("smallNewsContainer");
+          let oldFavourite = JSON.parse(localStorage.getItem("favouriteNews"));
+  
+          function setFavourite(button, index) {
+            button.addEventListener("click", () => {
+              oldFavourite.push(
+                {favouriteTitle: allArticles.articles[index+1].title, favouriteUrlImg : allArticles.articles[index+1].urlToImage, favouriteSource : allArticles.articles[index+1].source.name }
+              );
+              localStorage.setItem("favouriteNews", JSON.stringify(oldFavourite));
+              checkFavourite();
+            });
+          }
+
+          function checkFavourite(){
+            for(u=0;u<6;u++){
+              mainContainer.children[u].children[4].src = "../images/green-love.png";
+            }
+
+            for(i=0;i<oldFavourite.length;i++){
+              for(p=0;p<6;p++){
+                if(oldFavourite[i].favouriteTitle === allArticles.articles[p+1].title){
+                  mainContainer.children[p].children[4].src = "../images/heartRed.png"
+                }
+              }
+            }
+          }
+          
+          checkFavourite();
+  
+          let favouriteButton1 = document.getElementById("favouriteButton1");
+          let favouriteButton2 = document.getElementById("favouriteButton2");
+          let favouriteButton3 = document.getElementById("favouriteButton3");
+          let favouriteButton4 = document.getElementById("favouriteButton4");
+          let favouriteButton5 = document.getElementById("favouriteButton5");
+          let favouriteButton6 = document.getElementById("favouriteButton6");
+  
+          setFavourite(favouriteButton1, 0);
+          setFavourite(favouriteButton2, 1);
+          setFavourite(favouriteButton3, 2);
+          setFavourite(favouriteButton4, 3);
+          setFavourite(favouriteButton5, 4);
+          setFavourite(favouriteButton6, 5);
+          
+        }
+        setBigArticleContent();
+        setSmallArticleContent();
+        checkIfArticleRead();
+        setReadArticleContent(btn0, 0);
+        setReadArticleContent(btn1, 1);
+        setReadArticleContent(btn2, 2);
+        setReadArticleContent(btn3, 3);
+        setReadArticleContent(btn4, 4);
+        setReadArticleContent(btn5, 5);
+        setReadArticleContent(btn6, 6);
+        favouriteFunction();
       })
       .catch((err) => {
         console.log(err);
         alert("News didnt fully load");
       });
-    //her
   }
 
-  let searchField = document.getElementById("searchbar");
-
-  var url =
+  
+ 
+  let url =
     "https://newsapi.org/v2/top-headlines?" +
     "country=us&" +
     `apiKey=${apiNewsKey}`;
 
-  activate(url);
+  startSearch(url);
 
   document.getElementById("submit").addEventListener("click", (e) => {
+    let searchField = document.getElementById("searchbar");
     //prettier-ignore
     let languageArray = ["ar","de","en","es","fr","he","it","nl","no","pt","ru","sv","ud","zh",];
     //prettier-ignore
@@ -212,8 +213,9 @@ getApiKey().then((keys) => {
             for (i = 0; i < readTextArray.length; i++) {
               readTextArray[i].style.visibility = "hidden";
             }
-            activate(url);
+            startSearch(url);
             return;
+
           } else if (searchField.value === categoryArray[x]) {
             status = "active";
             let searchCategoryWord = searchField.value;
@@ -226,7 +228,7 @@ getApiKey().then((keys) => {
             for (i = 0; i < readTextArray.length; i++) {
               readTextArray[i].style.visibility = "hidden";
             }
-            activate(url);
+            startSearch(url);
             return;
           }
         }
@@ -247,7 +249,7 @@ getApiKey().then((keys) => {
         for (i = 0; i < readTextArray.length; i++) {
           readTextArray[i].style.visibility = "hidden";
         }
-        activate(url);
+        startSearch(url);
       }
     }
 
@@ -255,5 +257,9 @@ getApiKey().then((keys) => {
     if (status === "unactive") {
       searchWord();
     }
-  });
+
+  }); 
 });
+
+
+
