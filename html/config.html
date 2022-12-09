@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Config</title>
     <link rel="stylesheet" href="../css/configStyle.css" />
+    <link rel="stylesheet" href="../css/mainStyle.css" />
   </head>
+
   <body>
     <div id="sidebar">
       <button id="homeLogo">
@@ -19,7 +21,6 @@
       <div id="header">
         <div class="searchContainer">
           <form id="searchField">
-            <!-- TYPE: SUBMIT -> Submits form-data -->
             <button type="submit">
               <img src="../images/searchIcon.png" />
             </button>
@@ -40,30 +41,41 @@
 
       <div id="content">
         <div id="configContainer">
-            <p id="updateAcc">Update Account</p>
-            <p>Name</p>
-            <input type="email" id="userNameUpdate" required />
-            <p>Password</p>
-            <input type="password" id="userPwUpdate" required />
-            <button id = "updateButton">Update</button>
-            <button id="deleteAccount">Delete Account</button>
+          <p id="updateAcc">Update Account</p>
+          <p>Name</p>
+          <input type="email" id="userNameUpdate" required />
+          <p>Password</p>
+          <input type="password" id="userPwUpdate" required />
+          <button id="updateButton">Update</button>
+          <button id="deleteAccount">Delete Account</button>
+        </div>
+        <div id="configImageContainer">
+          <p id="pictureText">Choose your profile picture!</p>
+          <div id="pictureContainer">
+            <img
+              class="accountImage"
+              src="../images/profilepicture/earth.png"
+            />
+            <img class="accountImage" src="../images/profilepicture/fire.png" />
+            <img
+              class="accountImage"
+              src="../images/profilepicture/water-drop.png"
+            />
+            <img class="accountImage" src="../images/profilepicture/leaf.png" />
+          </div>
         </div>
         <div id="favouriteContainer">
-            <p id="favouriteText">Type in your favourite news categories!</p>
-            <input type="text" id="favouriteNews" placeholder="Food, Business, Animals ...">
-            <button id="addFavourite">Add</button>
-            <button id="deleteFavourite">Delete</button>
-            <div id="listContainer">
-              <ul id="ulContainer"></ul>
-            </div>
-        
-        </div>
-
-        </div>
-
-
-
-      </div>
+          <p id="favouriteText">Type in your favourite news categories!</p>
+          <input
+            type="text"
+            id="favouriteNews"
+            placeholder="Food, Business, Animals ..."
+          />
+          <button id="addFavourite">Add</button>
+          <button id="deleteFavourite">Delete</button>
+          <div id="listContainer">
+            <ul id="ulContainer"></ul>
+          </div>
         </div>
       </div>
     </div>
